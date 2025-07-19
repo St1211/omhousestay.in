@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMAYURU OM HOMESTAY - Himalayan Luxury Retreat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+    <style>
+        :root {
+            --primary: #8d6e63; /* Earthy Brown */
+            --primary-dark: #5d4037; /* Dark Brown */
+            --secondary: #e0e0e0; /* Light Gray */
+            --accent: #c2185b; /* Deep Pink */
+            --light: #f5f5f5; /* Off-white */
+            --dark: #212121; /* Dark Gray */
+            --gold: #d4af37; /* Gold */
+            --sky-blue: #87CEEB; /* Ladakh Sky Blue */
+            --mountain-gray: #8a9a5b; /* Mountain Green */
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Improved Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-left: 15px;
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+
+        .hero h2 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--gold);
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-btn.secondary:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        /* Improved Sections */
+        .section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 25px auto 0;
+            color: #666;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        /* About Section Improvements */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+            min-width: 300px;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold);
+            border-radius: var(--border-radius);
+            z-index: -1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Manager Section */
+        .manager {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 80px 0;
+            transition: var(--transition);
+            flex-wrap: wrap;
+        }
+
+        .manager:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        }
+
+        .manager-image {
+            flex: 1;
+            min-height: 400px;
+            background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80') center/cover no-repeat;
+            min-width: 300px;
+        }
+
+        .manager-info {
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+        }
+
+        .manager-info h3 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .manager-position {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+
+        .manager-info p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+        }
+
+        /* Rooms Section Enhancements */
+        .rooms {
+            background: var(--secondary);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .room-image {
+            height: 250px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .room-card:hover .room-image img {
+            transform: scale(1.1);
+        }
+
+        .room-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .room-info h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            gap: 15px;
+        }
+
+        .room-feature {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        .room-feature i {
+            color: var(--gold);
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .room-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .price {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Booking Section Improvements */
+        .booking {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ec 100%);
+        }
+
+        .booking-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .booking-form:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            color: var(--primary-dark);
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Gallery Section Enhancements */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Contact Section Improvements */
+        .contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-header h2 {
+            color: white;
+        }
+
+        .contact .section-header h2::after {
+            background: var(--gold);
+        }
+
+        .contact-info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            width: 280px;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .contact-item i {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .contact-item h3 {
+            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            margin-bottom: 15px;
+        }
+
+        .contact-item p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 10px;
+        }
+
+        /* Footer Enhancements */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        /* Location Section Improvements */
+        .location {
+            padding: 80px 5%;
+            background-color: #f9f9f9;
+        }
+
+        .location-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .location-details {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            min-width: 300px;
+        }
+
+        .location-details:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .location-details h3 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .address-card {
+            background: rgba(141, 110, 99, 0.05);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .address-card p {
+            margin-bottom: 8px;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+
+        .location-features {
+            margin-top: 30px;
+        }
+
+        .location-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .location-feature i {
+            color: var(--gold);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .location-feature div h4 {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 5px;
+        }
+
+        .location-feature div p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .location-map {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 500px;
+            background: #e9e9e9;
+            position: relative;
+            transition: var(--transition);
+            min-width: 300px;
+        }
+
+        .location-map:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.2);
+            color: white;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            flex-direction: column;
+        }
+
+        .map-overlay:hover {
+            background: rgba(0,0,0,0.3);
+        }
+
+        /* Directions Improvements */
+        .directions {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .directions:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .directions h4 {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+
+        .transport-option {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .transport-option:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .transport-option h5 {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+
+        .transport-option h5 i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+
+        .transport-option p {
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            line-height: 1.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .header-container {
+                padding: 0 3%;
+            }
+
+            .section {
+                padding: 70px 3%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content, .manager, .location-container {
+                flex-direction: column;
+            }
+
+            .manager-image {
+                min-height: 350px;
+                width: 100%;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .location-map {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 10px 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                margin: 15px 0;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            nav ul li {
+                margin: 8px 0;
+            }
+
+            .contact-info {
+                justify-content: center;
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .hero {
+                height: 90vh;
+            }
+
+            .hero-content {
+                padding: 20px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+
+            .booking-form {
+                padding: 25px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .contact-item {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .room-price {
+                justify-content: center;
+            }
+
+            .room-price .cta-btn {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info a {
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                min-width: auto;
+                width: 100%;
+            }
+
+            .location-details, .directions {
+                padding: 20px;
+            }
+
+            .section-header h2::after {
+                width: 60px;
+            }
+
+            .manager-info {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-mountain logo-icon"></i>
+                <h1>OM Homestay Lamayuru</h1>
+            </div>
+
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="contact-info">
+                <a href="tel:+917051044406"><i class="fas fa-phone"></i> +91 7051044406</a>
+                <a href="https://wa.me/917051044406" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Experience Himalayan Serenity</h2>
+            <p>Discover luxury amidst the majestic mountains of Lamayuru. Authentic hospitality, breathtaking views, and unforgettable memories await you.</p>
+            <div class="cta-buttons">
+                <a href="#booking" class="cta-btn">Book Your Stay</a>
+                <a href="#gallery" class="cta-btn secondary">View Gallery</a>
+            </div>
+        </div>
+        <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2>About Our Homestay</h2>
+            <p>Discover the authentic beauty of Ladakh with our warm hospitality</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Himalayan Sanctuary</h3>
+                <p>Nestled in the heart of Lamayuru, known for its ancient monastery and moon-like landscapes, OM Homestay offers a perfect blend of traditional Ladakhi culture and modern comfort.</p>
+                <p>Our homestay is family-run, ensuring personalized attention and authentic experiences. Wake up to breathtaking views of the Himalayas, savor traditional Ladakhi cuisine, and immerse yourself in the tranquility of this spiritual land.</p>
+                <p>Whether you're a trekker seeking adventure or a traveler looking for peace, our homestay provides the perfect base to explore the wonders of Ladakh.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="OM Homestay Lamayuru">
+            </div>
+        </div>
+
+        <!-- Manager Section -->
+        <div class="manager">
+            <div class="manager-image"></div>
+            <div class="manager-info">
+                <h3>Stanzin Jigmet</h3>
+                <span class="manager-position">Homestay Manager</span>
+                <p>With over 10 years of experience in hospitality, Stanzin ensures that every guest experiences the warmth of Ladakhi culture. His deep knowledge of the region and commitment to exceptional service will make your stay truly memorable.</p>
+                <p>"At OM Homestay, we don't just host guests; we welcome them into our family. Our mission is to create unforgettable Himalayan experiences that stay with you long after you leave."</p>
+                <a href="tel:+917051044406" class="cta-btn">Contact Stanzin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="section rooms" id="rooms">
+        <div class="section-header">
+            <h2>Our Accommodations</h2>
+            <p>Comfortable rooms with breathtaking mountain views</p>
+        </div>
+
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Standard Room">
+                </div>
+                <div class="room-info">
+                    <h3>Standard Room</h3>
+                    <p>Cozy and comfortable with all essential amenities. Perfect for solo travelers or couples.</p>
+                    <div class="room-features">
+                        <div class="room-feature"><i class="fas fa-user"></i> 2 Guests</div>
+                        <div class="room-feature"><i class="fas fa-snowflake"></i> Heating</div>
+                        <div class="room-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                    </div>
+                    <div class="room-price">
+                        <span class="price">₹1,800/night</span>
+                        <a href="#booking" class="cta-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80" alt="Deluxe Room">
+                </div>
+                <div class="room-info">
+                    <h3>Deluxe Room</h3>
+                    <p>Spacious room with mountain views, traditional décor, and modern comforts.</p>
+                    <div class="room-features">
+                        <div class="room-feature"><i class="fas fa-user"></i> 3 Guests</div>
+                        <div class="room-feature"><i class="fas fa-snowflake"></i> Heating</div>
+                        <div class="room-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                        <div class="room-feature"><i class="fas fa-mountain"></i> Mountain View</div>
+                    </div>
+                    <div class="room-price">
+                        <span class="price">₹2,500/night</span>
+                        <a href="#booking" class="cta-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Family Suite">
+                </div>
+                <div class="room-info">
+                    <h3>Family Suite</h3>
+                    <p>Two connecting rooms with private balcony offering panoramic Himalayan views.</p>
+                    <div class="room-features">
+                        <div class="room-feature"><i class="fas fa-user"></i> 4 Guests</div>
+                        <div class="room-feature"><i class="fas fa-snowflake"></i> Heating</div>
+                        <div class="room-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                        <div class="room-feature"><i class="fas fa-mountain"></i> Mountain View</div>
+                        <div class="room-feature"><i class="fas fa-utensils"></i> Breakfast Included</div>
+                    </div>
+                    <div class="room-price">
+                        <span class="price">₹3,500/night</span>
+                        <a href="#booking" class="cta-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section booking" id="booking">
+        <div class="section-header">
+            <h2>Book Your Stay</h2>
+            <p>Secure your Himalayan getaway with us</p>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+            <div class="form-header">
+                <h3>Reservation Request</h3>
+                <p>We'll confirm your booking within 24 hours</p>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" required>
+                        <option value="">Select Guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="checkin">Check-in Date</label>
+                    <input type="date" id="checkin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout">Check-out Date</label>
+                    <input type="date" id="checkout" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="room-type">Room Preference</label>
+                    <select id="room-type" required>
+                        <option value="">Select Room Type</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="family">Family Suite</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="how">How did you hear about us?</label>
+                    <select id="how">
+                        <option value="">Select Option</option>
+                        <option value="google">Google Search</option>
+                        <option value="social">Social Media</option>
+                        <option value="friend">Friend Recommendation</option>
+                        <option value="returning">Returning Guest</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Special Requests</label>
+                <textarea id="message" placeholder="Please share any special requirements or questions..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Booking Request</button>
+        </form>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="section-header">
+            <h2>Our Gallery</h2>
+            <p>Experience the beauty of Lamayuru through our lens</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1598257006626-48b0c252070d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Lamayuru Monastery">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1598940603846-a1edd0ef5274?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Traditional Room">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Himalayan Landscape">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Dining Area">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Mountain View">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551632436-cbf497f35f4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Local Culture">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section location" id="location">
+        <div class="section-header">
+            <h2>Our Location</h2>
+            <p>Find your way to our Himalayan retreat</p>
+        </div>
+
+        <div class="location-container">
+            <div class="location-details">
+                <h3>Discover Our Homestay</h3>
+                <p>Nestled in the breathtaking landscape of Ladakh, our homestay offers a serene escape with panoramic mountain views. We're perfectly positioned to explore the region's natural beauty and cultural heritage.</p>
+
+                <div class="address-card">
+                    <p><strong>OM Homestay Lamayuru</strong></p>
+                    <p>Near Lamayuru Monastery</p>
+                    <p>Lamayuru, Ladakh 194106</p>
+                    <p>Jammu & Kashmir, India</p>
+                    <p><i class="fas fa-phone"></i> +91 7051044406</p>
+                </div>
+
+                <div class="location-features">
+                    <div class="location-feature">
+                        <i class="fas fa-mountain"></i>
+                        <div>
+                            <h4>Mountain Views</h4>
+                            <p>Panoramic views of the Himalayan range from every room</p>
+                        </div>
+                    </div>
+                    <div class="location-feature">
+                        <i class="fas fa-monument"></i>
+                        <div>
+                            <h4>Historic Location</h4>
+                            <p>Walking distance to the ancient Lamayuru Monastery</p>
+                        </div>
+                    </div>
+                    <div class="location-feature">
+                        <i class="fas fa-hiking"></i>
+                        <div>
+                            <h4>Trekking Base</h4>
+                            <p>Perfect starting point for Himalayan treks and adventures</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="directions">
+                    <h4>Getting Here</h4>
+
+                    <div class="transport-option">
+                        <h5><i class="fas fa-car"></i> By Road</h5>
+                        <p>We are located 107km west of Leh on the Srinagar-Leh Highway (NH1). The journey takes approximately 2-3 hours by car. Look for our sign just before Lamayuru village.</p>
+                    </div>
+
+                    <div class="transport-option">
+                        <h5><i class="fas fa-bus"></i> By Bus</h5>
+                        <p>Regular buses run from Leh to Lamayuru. The bus stop is 200m from our homestay. We can arrange pickup from the bus stop with advance notice.</p>
+                    </div>
+
+                    <div class="transport-option">
+                        <h5><i class="fas fa-plane"></i> By Air</h5>
+                        <p>The nearest airport is Kushok Bakula Rimpochee Airport in Leh (IXL), approximately 107km away. We can arrange airport transfers with advance booking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-map">
+                <div class="map-overlay">
+                    <h3>Our Location</h3>
+                    <p>Near Lamayuru Monastery, Ladakh</p>
+                    <a href="https://goo.gl/maps/4c7X9zU4TfJ7ZvBf7" target="_blank" class="cta-btn">Open in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you. Reach out for bookings or inquiries.</p>
+        </div>
+
+        <div class="contact-info-container">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+91 7051044406</p>
+                <p>+91 7051044406</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <p>Direct Chat Available</p>
+                <a href="https://wa.me/917051044406" class="cta-btn">Message Us</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Address</h3>
+                <p>Near Lamayuru Monastery</p>
+                <p>Lamayuru, Ladakh 194106</p>
+                <p>Jammu & Kashmir, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>OM Homestay Lamayuru</h3>
+                <p>Experience authentic Ladakhi hospitality amidst the breathtaking Himalayan landscape. Your perfect mountain retreat awaits.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/917051044406" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Rooms</h3>
+                <ul class="footer-links">
+                    <li><a href="#rooms">Standard Room</a></li>
+                    <li><a href="#rooms">Deluxe Room</a></li>
+                    <li><a href="#rooms">Family Suite</a></li>
+                    <li><a href="#rooms">Special Offers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
